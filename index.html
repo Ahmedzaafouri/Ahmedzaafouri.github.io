@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="fr" class="lang-fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmed Zaafouri — Portfolio</title>
+<meta name="description" content="Ahmed Zaafouri — Étudiant ingénieur Réseaux & Télécommunications à l'INSAT Tunis. Projets en réseaux, systèmes embarqués (ESP32), vision par ordinateur et observabilité.">
+<meta property="og:title" content="Ahmed Zaafouri — Ingénieur Réseaux & Télécoms (étudiant)">
+<meta property="og:description" content="Portfolio : réseaux, IoT/ESP32, observabilité, vision par ordinateur.">
+<meta property="og:image" content="assets/photo.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232563eb'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='700' font-size='28' fill='white'>AZ</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fb; --bg-2:#ffffff; --surface:#ffffff; --surface-2:#f1f4f9;
+  --text:#0f172a; --muted:#5b6578; --line:#e3e8f0;
+  --accent:#2563eb; --accent-2:#0ea5e9; --accent-soft:rgba(37,99,235,.09);
+  --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);
+  --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a0f1c; --bg-2:#0d1424; --surface:#111a2e; --surface-2:#16213a;
+    --text:#e6ebf5; --muted:#94a0b8; --line:#1f2b45;
+    --accent:#4f8cff; --accent-2:#38bdf8; --accent-soft:rgba(79,140,255,.12);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a0f1c; --bg-2:#0d1424; --surface:#111a2e; --surface-2:#16213a;
+  --text:#e6ebf5; --muted:#94a0b8; --line:#1f2b45;
+  --accent:#4f8cff; --accent-2:#38bdf8; --accent-soft:rgba(79,140,255,.12);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* language toggle */
+.lang-fr [data-l="en"], .lang-en [data-l="fr"]{display:none !important}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.brand .dot{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font-size:13px}
+.links{display:flex;gap:4px;align-items:center}
+.links a{font-size:14px;color:var(--muted);padding:8px 12px;border-radius:8px;transition:.2s}
+.links a:hover{color:var(--text);background:var(--surface-2)}
+.tools{display:flex;gap:8px;align-items:center}
+.icon-btn{height:36px;min-width:36px;padding:0 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;display:grid;place-items:center;font:600 12px Inter,sans-serif}
+.icon-btn:hover{border-color:var(--accent)}
+.icon-btn svg{width:16px;height:16px}
+@media (max-width:860px){.links{display:none}}
+
+/* hero */
+.hero{position:relative;padding:88px 0 72px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(600px 300px at 85% 10%,var(--accent-soft),transparent 70%),
+  radial-gradient(500px 280px at 5% 90%,rgba(14,165,233,.08),transparent 70%);pointer-events:none}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 65%);opacity:.5;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:999px;margin-bottom:22px}
+.badge .pulse{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+h1{font-size:clamp(38px,6vw,62px);line-height:1.05;letter-spacing:-.035em;font-weight:800}
+h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:clamp(17px,2.2vw,21px);color:var(--muted);margin:18px 0 8px;font-weight:500}
+.terminal{font-size:14px;color:var(--muted);margin-bottom:30px}
+.terminal b{color:var(--accent);font-weight:600}
+.caret{display:inline-block;width:8px;height:16px;background:var(--accent);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#1d4ed8);color:#fff;border-color:transparent;box-shadow:0 8px 24px rgba(37,99,235,.3)}
+.btn svg{width:18px;height:18px}
+.photo-card{position:relative;justify-self:center}
+.photo-card .ring{position:absolute;inset:-14px;border-radius:32px;background:conic-gradient(from 200deg,var(--accent),var(--accent-2),transparent 60%,var(--accent));opacity:.55;filter:blur(18px)}
+.photo-card img{position:relative;width:min(340px,80vw);aspect-ratio:1;object-fit:cover;border-radius:28px;border:1px solid var(--line)}
+.chip-float{position:absolute;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:14px;padding:10px 14px;font-size:13px;display:flex;gap:10px;align-items:center}
+.chip-float strong{display:block;font-size:16px}
+.chip-float span{color:var(--muted);font-size:12px}
+.chip-float.a{left:-36px;bottom:36px}
+.chip-float.b{right:-28px;top:28px}
+.chip-float .ic{width:34px;height:34px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;color:var(--accent)}
+.chip-float .ic svg{width:18px;height:18px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);gap:48px}.photo-card{order:-1}.chip-float.a{left:-8px}.chip-float.b{right:-8px}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.stat .n{font-size:30px;font-weight:800;letter-spacing:-.03em;color:var(--accent)}
+.stat .l{font-size:14px;color:var(--muted)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* sections */
+section{padding:88px 0}
+.sec-head{margin-bottom:40px;max-width:640px}
+.kicker{font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.04em;margin-bottom:10px}
+h2{font-size:clamp(28px,4vw,38px);letter-spacing:-.03em;line-height:1.15}
+.sec-head p{color:var(--muted);margin-top:12px}
+.alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about p{color:var(--muted);margin-bottom:16px;font-size:16.5px}
+.about p strong{color:var(--text)}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);align-self:start}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.facts div:last-child{border:0}
+.facts dt{color:var(--muted)}
+.facts dd{font-weight:600;text-align:right}
+@media (max-width:860px){.about{grid-template-columns:minmax(0,1fr)}}
+
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{font:500 14px Inter,sans-serif;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{color:#fff;background:var(--accent);border-color:var(--accent)}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+.card.hide{display:none}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.card .pic{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex-shrink:0}
+.card .pic svg{width:24px;height:24px}
+.card .meta{font-size:12px;color:var(--muted);text-align:right}
+.card h3{font-size:19px;letter-spacing:-.015em;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.card ul{margin:12px 0 0 18px;color:var(--muted);font-size:14.5px}
+.card ul li{margin-bottom:4px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.tag{font-size:12px;font-family:"JetBrains Mono",monospace;padding:4px 9px;border-radius:7px;background:var(--surface-2);color:var(--text);border:1px solid var(--line)}
+.card .foot{margin-top:auto;padding-top:20px;display:flex;gap:16px}
+.card .foot a{font-size:14px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.card .foot a:hover{text-decoration:underline}
+.card.featured{grid-column:1/-1}
+.card.featured .body{display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+@media (max-width:860px){.projects{grid-template-columns:minmax(0,1fr)}.card.featured .body{grid-template-columns:minmax(0,1fr)}}
+@media (min-width:861px){.projects .card:last-child:nth-child(even){grid-column:1/-1}}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.skill h3{font-size:16px;display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.skill h3 .pic{width:34px;height:34px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.skill h3 .pic svg{width:18px;height:18px}
+.skill .tags{margin-top:0}
+@media (max-width:900px){.skills{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.skills{grid-template-columns:1fr}}
+
+/* timeline */
+.tl-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px}
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--line))}
+.tl{position:relative;margin-bottom:34px}
+.tl::before{content:"";position:absolute;left:-28px;top:5px;width:16px;height:16px;border-radius:50%;background:var(--bg-2);border:3px solid var(--accent)}
+.tl .when{font-size:13px;color:var(--accent);font-weight:600}
+.tl h3{font-size:18px;margin:4px 0 2px}
+.tl .where{color:var(--muted);font-size:14.5px;margin-bottom:10px}
+.tl ul{margin-left:18px;color:var(--muted);font-size:15px}
+.tl ul li{margin-bottom:4px}
+.tl strong{color:var(--text)}
+.side-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:20px}
+.side-card h3{font-size:16px;margin-bottom:16px}
+.lang{margin-bottom:14px}
+.lang .row{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.lang .row span{color:var(--muted)}
+.bar{height:6px;border-radius:6px;background:var(--surface-2);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.qual li{list-style:none;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14.5px;color:var(--muted)}
+.qual li:last-child{border:0}
+.qual li b{color:var(--text)}
+@media (max-width:860px){.tl-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* contact */
+.contact{background:linear-gradient(135deg,#0f1b3d,#1d3a8a);color:#fff;border-radius:24px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.contact::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(rgba(56,189,248,.35),transparent 70%)}
+.contact h2{color:#fff}
+.contact p{color:#c7d2fe;margin-top:12px}
+.clinks{display:grid;gap:12px;position:relative;z-index:1}
+.clinks a{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);transition:.2s;font-size:15px;word-break:break-all}
+.clinks a:hover{background:rgba(255,255,255,.14);transform:translateX(4px)}
+.clinks svg{width:20px;height:20px;flex-shrink:0}
+@media (max-width:860px){.contact{grid-template-columns:1fr;padding:32px 22px}}
+
+footer{padding:36px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm18 2-10 7L2 6"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Zm0-9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 8.8a15 15 0 0 1 20 0M5 12.6a10 10 0 0 1 14 0M8.5 16.4a5 5 0 0 1 7 0M12 20h.01"/></symbol>
+  <symbol id="i-net" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 2v6M5 22v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M12 12v4M9 2h6v6H9zM2 18h6v4H2zM16 18h6v4h-6zM9 12h6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 8V4H8M4 8h16v12H4zM2 14h2M20 14h2M9 13v2M15 13v2"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Zm0 0v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 6h12v12H6zM9 9h6v6H9zM9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-4 3 3 6-6"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm-3.5-1.1L7 22l5-3 5 3-1.5-8.1"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M7 7h10v10"/></symbol>
+</svg>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand"><span class="dot">AZ</span>Ahmed Zaafouri</a>
+    <div class="links">
+      <a href="#about"><span data-l="fr">Profil</span><span data-l="en">About</span></a>
+      <a href="#projects"><span data-l="fr">Projets</span><span data-l="en">Projects</span></a>
+      <a href="#skills"><span data-l="fr">Compétences</span><span data-l="en">Skills</span></a>
+      <a href="#education"><span data-l="fr">Parcours</span><span data-l="en">Education</span></a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="tools">
+      <button class="icon-btn" id="langBtn" aria-label="Changer de langue / Switch language"><span data-l="fr">EN</span><span data-l="en">FR</span></button>
+      <button class="icon-btn" id="themeBtn" aria-label="Thème clair/sombre"><svg id="themeIcon"><use href="#i-moon"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <div>
+      <div class="badge"><span class="pulse"></span>
+        <span data-l="fr">Ouvert aux opportunités de stage</span><span data-l="en">Open to internship opportunities</span>
+      </div>
+      <h1>Ahmed <span class="grad">Zaafouri</span></h1>
+      <p class="role">
+        <span data-l="fr">Étudiant ingénieur Réseaux & Télécommunications · INSAT Tunis</span>
+        <span data-l="en">Networks & Telecommunications Engineering Student · INSAT Tunis</span>
+      </p>
+      <p class="terminal mono">$ <b>focus</b> --on <span id="typed">network-engineering</span><span class="caret"></span></p>
+      <div class="cta">
+        <a class="btn primary" href="cv/Ahmed-Zaafouri-CV.pdf" download><svg><use href="#i-dl"/></svg><span data-l="fr">Télécharger le CV</span><span data-l="en">Download CV</span></a>
+        <a class="btn" href="https://github.com/Ahmedzaafouri" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/ahmed-zaafouri-53839a397/" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg>LinkedIn</a>
+      </div>
+    </div>
+    <div class="photo-card">
+      <div class="ring"></div>
+      <img src="assets/photo.jpg" alt="Photo d'Ahmed Zaafouri" width="340" height="340">
+      <div class="chip-float a"><div class="ic"><svg><use href="#i-award"/></svg></div><div><strong>18,59 / 20</strong><span data-l="fr">Bac — 1er du gouvernorat</span><span data-l="en">Baccalaureate — ranked 1st in region</span></div></div>
+      <div class="chip-float b"><div class="ic"><svg><use href="#i-net"/></svg></div><div><strong>INSAT · RT3</strong><span data-l="fr">Major de promotion</span><span data-l="en">Top of class</span></div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats reveal">
+    <div class="stat"><div class="n">1<sup>er</sup></div><div class="l"><span data-l="fr">Major de promotion RT — INSAT</span><span data-l="en">Ranked 1st in RT program — INSAT</span></div></div>
+    <div class="stat"><div class="n">18,59</div><div class="l"><span data-l="fr">Moyenne au Bac (Très Bien)</span><span data-l="en">Baccalaureate GPA / 20</span></div></div>
+    <div class="stat"><div class="n">4+</div><div class="l"><span data-l="fr">Projets open source sur GitHub</span><span data-l="en">Open-source projects on GitHub</span></div></div>
+    <div class="stat"><div class="n">3</div><div class="l"><span data-l="fr">Langues : arabe, français, anglais</span><span data-l="en">Languages: Arabic, French, English</span></div></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker mono">01 — <span data-l="fr">PROFIL</span><span data-l="en">ABOUT</span></div>
+      <h2><span data-l="fr">Des réseaux au silicium, j'aime comprendre comment les choses communiquent.</span><span data-l="en">From networks to silicon, I like understanding how things communicate.</span></h2>
+    </div>
+    <div class="about">
+      <div class="reveal">
+        <p data-l="fr">Étudiant en <strong>3ᵉ année du cycle ingénieur Réseaux & Télécommunications à l'INSAT</strong>, l'une des écoles d'ingénieurs les plus sélectives de Tunisie, où je suis <strong>major de ma promotion</strong>.</p>
+        <p data-l="en">I'm a <strong>3rd-year Networks & Telecommunications engineering student at INSAT</strong>, one of Tunisia's most selective engineering schools, where I currently <strong>rank first in my class</strong>.</p>
+        <p data-l="fr">Je combine des bases théoriques solides — protocoles réseau, routage, traitement du signal, propagation des ondes — avec une pratique concrète : <strong>topologies virtualisées avec supervision Prometheus/Grafana</strong>, <strong>firmware ESP32</strong> avec tableau de bord web temps réel, et <strong>vision par ordinateur</strong> embarquée sur Raspberry Pi.</p>
+        <p data-l="en">I pair solid theory — network protocols, routing, signal processing, wave propagation — with hands-on work: <strong>virtualised topologies monitored with Prometheus/Grafana</strong>, <strong>ESP32 firmware</strong> with a real-time web dashboard, and embedded <strong>computer vision</strong> on Raspberry Pi.</p>
+        <p data-l="fr">Je recherche un <strong>stage</strong> en réseaux, cybersécurité, IoT ou systèmes embarqués pour mettre ces compétences au service d'une équipe exigeante.</p>
+        <p data-l="en">I'm looking for an <strong>internship</strong> in networking, cybersecurity, IoT or embedded systems where I can contribute to a demanding team.</p>
+      </div>
+      <dl class="facts reveal">
+        <div><dt><span data-l="fr">École</span><span data-l="en">School</span></dt><dd>INSAT — Tunis</dd></div>
+        <div><dt><span data-l="fr">Filière</span><span data-l="en">Program</span></dt><dd><span data-l="fr">Réseaux & Télécoms</span><span data-l="en">Networks & Telecom</span></dd></div>
+        <div><dt><span data-l="fr">Niveau</span><span data-l="en">Year</span></dt><dd><span data-l="fr">3ᵉ année</span><span data-l="en">3rd year</span></dd></div>
+        <div><dt><span data-l="fr">Localisation</span><span data-l="en">Location</span></dt><dd>Tunis · Sidi Bouzid</dd></div>
+        <div><dt><span data-l="fr">Recherche</span><span data-l="en">Seeking</span></dt><dd><span data-l="fr">Stage</span><span data-l="en">Internship</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker mono">02 — <span data-l="fr">PROJETS</span><span data-l="en">PROJECTS</span></div>
+      <h2><span data-l="fr">Projets sélectionnés</span><span data-l="en">Selected work</span></h2>
+      <p><span data-l="fr">Projets personnels et académiques — le code est disponible sur GitHub.</span><span data-l="en">Personal and academic projects — code is available on GitHub.</span></p>
+    </div>
+    <div class="filters reveal" role="tablist">
+      <button class="on" data-f="all"><span data-l="fr">Tous</span><span data-l="en">All</span></button>
+      <button data-f="net"><span data-l="fr">Réseaux</span><span data-l="en">Networking</span></button>
+      <button data-f="emb"><span data-l="fr">Embarqué & IoT</span><span data-l="en">Embedded & IoT</span></button>
+      <button data-f="ai">Vision / IA</button>
+      <button data-f="sw"><span data-l="fr">Logiciel & BDD</span><span data-l="en">Software & DB</span></button>
+    </div>
+
+    <div class="projects">
+      <article class="card featured reveal" data-c="net">
+        <div class="top">
+          <div class="pic"><svg><use href="#i-chart"/></svg></div>
+          <div class="meta mono">2026 · <span data-l="fr">Projet INSAT RT3</span><span data-l="en">INSAT RT3 project</span></div>
+        </div>
+        <div class="body">
+          <div>
+            <h3><span data-l="fr">Observabilité & détection d'anomalies réseau</span><span data-l="en">Network observability & anomaly detection</span></h3>
+            <p data-l="fr">Migration d'une supervision SNMP par sondage (toutes les 5 min) vers une télémétrie de flux (sFlow/IPFIX) et des métriques haute fréquence, sur une topologie virtualisée complète.</p>
+            <p data-l="en">Migrated a 5-minute SNMP polling setup to flow telemetry (sFlow/IPFIX) and high-frequency metrics, on a fully virtualised topology.</p>
+          </div>
+          <ul>
+            <li data-l="fr">Cœur de 3 routeurs <b>FRRouting</b> sous <b>Containerlab</b>, LAN + DMZ, liens bridés à 100 Mbit/s (<code>tc</code>)</li>
+            <li data-l="en">Core of 3 <b>FRRouting</b> routers on <b>Containerlab</b>, LAN + DMZ, links shaped to 100 Mbit/s (<code>tc</code>)</li>
+            <li data-l="fr">Double pile <b>IPv4/IPv6</b>, routage <b>OSPFv2/OSPFv3</b>, réseau d'administration hors-bande</li>
+            <li data-l="en">Dual-stack <b>IPv4/IPv6</b>, <b>OSPFv2/OSPFv3</b> routing, out-of-band management network</li>
+            <li data-l="fr">Pile <b>Prometheus · Grafana · Alertmanager</b> et collecteur GoFlow2 ; hôte attaquant pour tester la détection</li>
+            <li data-l="en"><b>Prometheus · Grafana · Alertmanager</b> stack with GoFlow2 collector; attacker host to test detection</li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tag">Containerlab</span><span class="tag">FRRouting</span><span class="tag">OSPF</span><span class="tag">IPv6</span><span class="tag">sFlow/IPFIX</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Bash</span></div>
+        <div class="foot"><a href="https://github.com/Ahmedzaafouri/projet9-observabilite-reseau" target="_blank" rel="noopener"><span data-l="fr">Voir le code</span><span data-l="en">View code</span><svg width="14" height="14"><use href="#i-arrow"/></svg></a></div>
+      </article>
+
+      <article class="card reveal" data-c="emb net">
+        <div class="top"><div class="pic"><svg><use href="#i-wifi"/></svg></div><div class="meta mono">2026 · <span data-l="fr">Personnel</span><span data-l="en">Personal</span></div></div>
+        <h3><span data-l="fr">Scanner Wi‑Fi ESP32 & carte de chaleur</span><span data-l="en">ESP32 Wi‑Fi scanner & signal heatmap</span></h3>
+        <p data-l="fr">Analyseur Wi‑Fi portable : l'ESP32 scanne la bande 2,4 GHz (SSID, BSSID, RSSI, canal, chiffrement) et sert lui‑même un tableau de bord web temps réel.</p>
+        <p data-l="en">Portable Wi‑Fi analyser: the ESP32 scans the 2.4 GHz band (SSID, BSSID, RSSI, channel, encryption) and serves its own real-time web dashboard.</p>
+        <ul>
+          <li data-l="fr">API REST + WebSocket hébergées sur le microcontrôleur</li>
+          <li data-l="en">REST API + WebSocket hosted on the microcontroller</li>
+          <li data-l="fr">Graphiques Chart.js, option GPS (NEO‑6M) pour une heatmap Leaflet géoréférencée</li>
+          <li data-l="en">Chart.js charts, optional GPS (NEO‑6M) for a geo-referenced Leaflet heatmap</li>
+        </ul>
+        <div class="tags"><span class="tag">ESP32</span><span class="tag">C++</span><span class="tag">PlatformIO</span><span class="tag">WebSocket</span><span class="tag">802.11</span><span class="tag">Chart.js</span></div>
+        <div class="foot"><a href="https://github.com/Ahmedzaafouri/esp32-wifi-scanner" target="_blank" rel="noopener"><span data-l="fr">Voir le code</span><span data-l="en">View code</span><svg width="14" height="14"><use href="#i-arrow"/></svg></a></div>
+      </article>
+
+      <article class="card reveal" data-c="ai emb">
+        <div class="top"><div class="pic"><svg><use href="#i-eye"/></svg></div><div class="meta mono">2026 · Robotique</div></div>
+        <h3><span data-l="fr">Détection de formes en temps réel</span><span data-l="en">Real-time shape detection</span></h3>
+        <p data-l="fr">Modèle <b>YOLO</b> entraîné sur mesure pour reconnaître cubes, sphères et pyramides via caméra, exécuté sur <b>Raspberry Pi</b>.</p>
+        <p data-l="en">Custom-trained <b>YOLO</b> model recognising cubes, spheres and pyramids from a camera feed, running on a <b>Raspberry Pi</b>.</p>
+        <ul>
+          <li data-l="fr">Boîtes, centres et confiance affichés en direct avec mesure des FPS</li>
+          <li data-l="en">Live bounding boxes, centroids and confidence with FPS overlay</li>
+          <li data-l="fr">Émet un code par classe détectée pour piloter le robot</li>
+          <li data-l="en">Emits a per-class code to drive the robot's behaviour</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">OpenCV</span><span class="tag">Raspberry Pi</span></div>
+        <div class="foot"><a href="https://github.com/Ahmedzaafouri/vision_shapedetection" target="_blank" rel="noopener"><span data-l="fr">Voir le code</span><span data-l="en">View code</span><svg width="14" height="14"><use href="#i-arrow"/></svg></a></div>
+      </article>
+
+      <article class="card reveal" data-c="emb">
+        <div class="top"><div class="pic"><svg><use href="#i-bot"/></svg></div><div class="meta mono">2026 · Robotique</div></div>
+        <h3><span data-l="fr">Robot suiveur de ligne PID</span><span data-l="en">PID line-following robot</span></h3>
+        <p data-l="fr">Firmware ESP32 d'un robot suiveur de ligne à 6 capteurs infrarouges, avec régulation PID et pilotage PWM des moteurs.</p>
+        <p data-l="en">ESP32 firmware for a 6-sensor infrared line follower with PID control and PWM motor drive.</p>
+        <ul>
+          <li data-l="fr">Calibration automatique min/max des capteurs, gestion des lignes inversées</li>
+          <li data-l="en">Automatic min/max sensor calibration, inverted-line handling</li>
+          <li data-l="fr">Anti-windup sur l'intégrale, séquences temporisées par section de piste</li>
+          <li data-l="en">Integral anti-windup, timed sequences per track section</li>
+        </ul>
+        <div class="tags"><span class="tag">C++</span><span class="tag">Arduino</span><span class="tag">ESP32</span><span class="tag">PID</span><span class="tag">PWM</span></div>
+        <div class="foot"><a href="https://github.com/Ahmedzaafouri/line_follower_1" target="_blank" rel="noopener"><span data-l="fr">Voir le code</span><span data-l="en">View code</span><svg width="14" height="14"><use href="#i-arrow"/></svg></a></div>
+      </article>
+
+      <article class="card reveal" data-c="net">
+        <div class="top"><div class="pic"><svg><use href="#i-net"/></svg></div><div class="meta mono">2025 · INSAT</div></div>
+        <h3><span data-l="fr">Architecture LAN d'entreprise</span><span data-l="en">Enterprise LAN architecture</span></h3>
+        <p data-l="fr">Conception complète d'un réseau local d'entreprise segmenté, simulé et validé sous Cisco Packet Tracer.</p>
+        <p data-l="en">End-to-end design of a segmented enterprise LAN, simulated and validated in Cisco Packet Tracer.</p>
+        <ul>
+          <li data-l="fr">Segmentation par VLANs et routage inter-VLAN</li>
+          <li data-l="en">VLAN segmentation and inter-VLAN routing</li>
+          <li data-l="fr">Plan d'adressage IP et règles d'accès</li>
+          <li data-l="en">IP addressing plan and access rules</li>
+        </ul>
+        <div class="tags"><span class="tag">Cisco Packet Tracer</span><span class="tag">VLAN</span><span class="tag">TCP/IP</span></div>
+      </article>
+
+      <article class="card reveal" data-c="sw">
+        <div class="top"><div class="pic"><svg><use href="#i-db"/></svg></div><div class="meta mono">2025–2026 · INSAT</div></div>
+        <h3><span data-l="fr">Bases de données & programmation</span><span data-l="en">Databases & programming</span></h3>
+        <p data-l="fr">Modélisation E/R et schéma SQL normalisé d'une base de gestion étudiante sous MySQL ; applications Java orientées objet et scripts Python d'automatisation.</p>
+        <p data-l="en">E/R modelling and a normalised SQL schema for a student-management database on MySQL; object-oriented Java apps and Python automation scripts.</p>
+        <ul>
+          <li data-l="fr">Requêtes avancées : jointures, sous-requêtes, agrégations</li>
+          <li data-l="en">Advanced queries: joins, sub-queries, aggregations</li>
+          <li data-l="fr">Héritage, polymorphisme, interfaces ; arbres, graphes, piles</li>
+          <li data-l="en">Inheritance, polymorphism, interfaces; trees, graphs, stacks</li>
+        </ul>
+        <div class="tags"><span class="tag">MySQL</span><span class="tag">SQL</span><span class="tag">Java</span><span class="tag">Python</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker mono">03 — <span data-l="fr">COMPÉTENCES</span><span data-l="en">SKILLS</span></div>
+      <h2><span data-l="fr">Boîte à outils technique</span><span data-l="en">Technical toolbox</span></h2>
+    </div>
+    <div class="skills">
+      <div class="skill reveal"><h3><span class="pic"><svg><use href="#i-net"/></svg></span><span data-l="fr">Réseaux</span><span data-l="en">Networking</span></h3>
+        <div class="tags"><span class="tag">TCP/IP</span><span class="tag">IPv4/IPv6</span><span class="tag">OSPF</span><span class="tag">VLAN</span><span class="tag">LAN</span><span class="tag">802.11 Wi‑Fi</span><span class="tag">SNMP</span><span class="tag">sFlow/IPFIX</span></div></div>
+      <div class="skill reveal"><h3><span class="pic"><svg><use href="#i-chart"/></svg></span><span data-l="fr">Systèmes & supervision</span><span data-l="en">Systems & monitoring</span></h3>
+        <div class="tags"><span class="tag">Linux</span><span class="tag">Bash</span><span class="tag">Docker</span><span class="tag">Containerlab</span><span class="tag">FRRouting</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Git</span></div></div>
+      <div class="skill reveal"><h3><span class="pic"><svg><use href="#i-code"/></svg></span><span data-l="fr">Programmation</span><span data-l="en">Programming</span></h3>
+        <div class="tags"><span class="tag">Python</span><span class="tag">C / C++</span><span class="tag">Java (POO)</span><span class="tag">SQL / MySQL</span><span class="tag">HTML / CSS / JS</span></div></div>
+      <div class="skill reveal"><h3><span class="pic"><svg><use href="#i-chip"/></svg></span><span data-l="fr">Embarqué & IoT</span><span data-l="en">Embedded & IoT</span></h3>
+        <div class="tags"><span class="tag">ESP32</span><span class="tag">Arduino</span><span class="tag">PlatformIO</span><span class="tag">Raspberry Pi</span><span class="tag">PID</span><span class="tag">Capteurs / GPS</span></div></div>
+      <div class="skill reveal"><h3><span class="pic"><svg><use href="#i-eye"/></svg></span><span data-l="fr">Vision & données</span><span data-l="en">Vision & data</span></h3>
+        <div class="tags"><span class="tag">OpenCV</span><span class="tag">YOLO</span><span class="tag">Structures de données</span><span class="tag">Probabilités & stats</span></div></div>
+      <div class="skill reveal"><h3><span class="pic"><svg><use href="#i-tool"/></svg></span><span data-l="fr">Télécoms & outils</span><span data-l="en">Telecom & tools</span></h3>
+        <div class="tags"><span class="tag">Traitement du signal</span><span class="tag">Propagation des ondes</span><span class="tag">Techniques de transmission</span><span class="tag">Packet Tracer</span><span class="tag">SolidWorks</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker mono">04 — <span data-l="fr">PARCOURS</span><span data-l="en">EDUCATION</span></div>
+      <h2><span data-l="fr">Formation & distinctions</span><span data-l="en">Education & honours</span></h2>
+    </div>
+    <div class="tl-grid">
+      <div class="timeline">
+        <div class="tl reveal">
+          <div class="when mono">2024 — <span data-l="fr">aujourd'hui</span><span data-l="en">present</span></div>
+          <h3><span data-l="fr">Cycle ingénieur — Réseaux & Télécommunications</span><span data-l="en">Engineering degree — Networks & Telecommunications</span></h3>
+          <div class="where">INSAT — Institut National des Sciences Appliquées et de Technologie, Tunis</div>
+          <ul>
+            <li data-l="fr"><strong>Major de promotion</strong> en 3ᵉ année RT</li>
+            <li data-l="en"><strong>Ranked 1st</strong> in 3rd-year RT program</li>
+            <li data-l="fr">Admis via le concours national, parmi les meilleurs bacheliers du pays</li>
+            <li data-l="en">Admitted through the national competitive exam among the country's top graduates</li>
+            <li data-l="fr">Architecture réseau, LAN, bases de données, techniques de transmission, télécommunications, technologies web, traitement du signal, propagation des ondes</li>
+            <li data-l="en">Network architecture, LAN, databases, transmission techniques, telecom, web technologies, signal processing, wave propagation</li>
+          </ul>
+        </div>
+        <div class="tl reveal">
+          <div class="when mono">2024</div>
+          <h3><span data-l="fr">Baccalauréat Technique — Mention Très Bien</span><span data-l="en">Technical Baccalaureate — Highest Honours</span></h3>
+          <div class="where"><span data-l="fr">Lycée secondaire 9 Avril, Sidi Bouzid</span><span data-l="en">9 Avril High School, Sidi Bouzid</span></div>
+          <ul>
+            <li data-l="fr">Moyenne <strong>18,59 / 20</strong> — <strong>1er du gouvernorat</strong> de Sidi Bouzid</li>
+            <li data-l="en">GPA <strong>18.59 / 20</strong> — <strong>ranked 1st</strong> in the Sidi Bouzid governorate</li>
+            <li data-l="fr">1er de classe chaque année du cycle secondaire</li>
+            <li data-l="en">Top of class every year of high school</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="side-card reveal">
+          <h3><span data-l="fr">Langues</span><span data-l="en">Languages</span></h3>
+          <div class="lang"><div class="row"><b><span data-l="fr">Arabe</span><span data-l="en">Arabic</span></b><span><span data-l="fr">Langue maternelle</span><span data-l="en">Native</span></span></div><div class="bar"><i style="width:100%"></i></div></div>
+          <div class="lang"><div class="row"><b><span data-l="fr">Français</span><span data-l="en">French</span></b><span><span data-l="fr">Avancé</span><span data-l="en">Advanced</span></span></div><div class="bar"><i style="width:85%"></i></div></div>
+          <div class="lang"><div class="row"><b><span data-l="fr">Anglais</span><span data-l="en">English</span></b><span><span data-l="fr">Intermédiaire</span><span data-l="en">Intermediate</span></span></div><div class="bar"><i style="width:65%"></i></div></div>
+        </div>
+        <div class="side-card reveal">
+          <h3><span data-l="fr">Qualités</span><span data-l="en">Strengths</span></h3>
+          <ul class="qual">
+            <li><b><span data-l="fr">Rigoureux & analytique</span><span data-l="en">Rigorous & analytical</span></b> — <span data-l="fr">résolution méthodique de problèmes</span><span data-l="en">methodical problem solving</span></li>
+            <li><b><span data-l="fr">Autonome & curieux</span><span data-l="en">Self-driven & curious</span></b> — <span data-l="fr">veille technologique constante</span><span data-l="en">constant tech watch</span></li>
+            <li><b><span data-l="fr">Esprit d'équipe</span><span data-l="en">Team player</span></b> — <span data-l="fr">projets collaboratifs</span><span data-l="en">collaborative projects</span></li>
+            <li><b><span data-l="fr">Adaptable</span><span data-l="en">Adaptable</span></b> — <span data-l="fr">apprentissage rapide</span><span data-l="en">fast learner</span></li>
+          </ul>
+        </div>
+        <div class="side-card reveal">
+          <h3><span data-l="fr">Centres d'intérêt</span><span data-l="en">Interests</span></h3>
+          <div class="tags" style="margin-top:0"><span class="tag"><span data-l="fr">Cybersécurité</span><span data-l="en">Cybersecurity</span></span><span class="tag"><span data-l="fr">Programmation compétitive</span><span data-l="en">Competitive programming</span></span><span class="tag"><span data-l="fr">IA</span><span data-l="en">AI</span></span><span class="tag"><span data-l="fr">Systèmes embarqués</span><span data-l="en">Embedded systems</span></span><span class="tag">Open source & Linux</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div>
+        <div class="kicker mono" style="color:#93c5fd">05 — CONTACT</div>
+        <h2><span data-l="fr">Travaillons ensemble.</span><span data-l="en">Let's work together.</span></h2>
+        <p><span data-l="fr">Stage, projet ou simple échange autour des réseaux et de l'embarqué : n'hésitez pas à me contacter.</span><span data-l="en">Internship, project, or just a chat about networking and embedded systems — feel free to reach out.</span></p>
+      </div>
+      <div class="clinks">
+        <a href="mailto:ahmed.zaafouri@insat.ucar.tn"><svg><use href="#i-mail"/></svg>ahmed.zaafouri@insat.ucar.tn</a>
+        <a href="https://www.linkedin.com/in/ahmed-zaafouri-53839a397/" target="_blank" rel="noopener"><svg><use href="#i-in"/></svg>linkedin.com/in/ahmed-zaafouri</a>
+        <a href="https://github.com/Ahmedzaafouri" target="_blank" rel="noopener"><svg><use href="#i-gh"/></svg>github.com/Ahmedzaafouri</a>
+        <a href="cv/Ahmed-Zaafouri-CV.pdf" download><svg><use href="#i-dl"/></svg><span data-l="fr">CV (PDF)</span><span data-l="en">Résumé (PDF)</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Ahmed Zaafouri</span>
+    <span class="mono">Tunis, Tunisie</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  // language
+  function setLang(l){root.classList.remove('lang-fr','lang-en');root.classList.add('lang-'+l);root.lang=l;store('lang',l)}
+  var sl=store('lang'); if(sl==='en'||sl==='fr') setLang(sl);
+  document.getElementById('langBtn').onclick=function(){setLang(root.classList.contains('lang-fr')?'en':'fr')};
+  // theme
+  var icon=document.getElementById('themeIcon').querySelector('use');
+  function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+  function syncIcon(){icon.setAttribute('href',isDark()?'#i-sun':'#i-moon')}
+  var st=store('theme'); if(st) root.setAttribute('data-theme',st); syncIcon();
+  document.getElementById('themeBtn').onclick=function(){var t=isDark()?'light':'dark';root.setAttribute('data-theme',t);store('theme',t);syncIcon()};
+  // filters
+  var btns=document.querySelectorAll('.filters button'),cards=document.querySelectorAll('.card');
+  btns.forEach(function(b){b.onclick=function(){btns.forEach(function(x){x.classList.remove('on')});b.classList.add('on');var f=b.dataset.f;
+    cards.forEach(function(c){c.classList.toggle('hide',f!=='all'&&c.dataset.c.split(' ').indexOf(f)<0)})}});
+  // typed
+  var words=['network-engineering','embedded-systems','observability','computer-vision','cybersecurity'],i=0,el=document.getElementById('typed');
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(function(){i=(i+1)%words.length;el.textContent=words[i]},2400)}
+  // reveal
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(r){io.observe(r)})}else{document.querySelectorAll('.reveal').forEach(function(r){r.classList.add('in')})}
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
